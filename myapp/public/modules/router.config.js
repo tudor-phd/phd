@@ -28,6 +28,10 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
         .state('dashboard', {
             url: '/dashboard',
             templateUrl: 'modules/dashboard/partials/dashboardPartial.html'
+        })
+        .state('library', {
+            url: '/library',
+            templateUrl: 'modules/library/partials/libraryPartial.html'
         });
 
 });
