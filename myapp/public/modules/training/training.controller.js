@@ -8,6 +8,8 @@ myApp.controller('trainingController', function($scope)
 	var web = new WebAvatar();
 	web.connection = sdk;
 	web.avatar = "667624";
+	web.voice = "dfki-prudence";
+    web.lang = "en-GB";
 	web.voice = "";
 	web.width = "300";
 	web.height = "300";
@@ -19,5 +21,21 @@ myApp.controller('trainingController', function($scope)
 		var text = $scope.trainingText;
 		web.addMessage(text, "", "", "");
 		web.processMessages();
-	}
+	};
+
+	$scope.changetoEng = function() {
+	   web.voice = "dfki-prudence";
+       web.lang = "en-GB";
+	};
+
+	$scope.changetoFr = function() {
+		web.voice = "camille";
+        web.lang = "fr";
+	};
+
+	$scope.changetoGe = function() {
+		web.voice = "bits1-hsmm";
+        web.lang = "de";
+	};
+
 });

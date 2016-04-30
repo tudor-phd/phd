@@ -1,4 +1,27 @@
 <div  ng-controller="mainController" class="jumbotron text-center">
-    <h1>The Home Page</h1>
-    <p>This page demonstrates <span class="text-danger">nested</span> views.</p>
+<h2>Welcome!</h2>
+ <div ng-click="open()" class="details">
+  <div class="pulse1"></div>
+  <div class="pulse2"></div>
+  <div class="icon1"></div>
+</div>
+<!-- Open modal with details -->
+<script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title">I'm a modal!</h3>
+        </div>
+        <div class="modal-body">
+            <ul>
+                <li ng-repeat="item in items">
+                    <a href="#" ng-click="$event.preventDefault(); selected.item = item">{{ item }}</a>
+                </li>
+            </ul>
+            Selected: <b>{{ selected.item }}</b>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+    <!-- Open modal with details -->
 </div>

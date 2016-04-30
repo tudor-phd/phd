@@ -1,3 +1,7 @@
+body{
+overflow-y:hidden;
+background-color: #00897B;
+}
 .form-control{
 	margin-bottom: 10px;
 }
@@ -6,5 +10,158 @@
 }
 .deaf-symbol{
 	width: 30px;
-	height: 30px;
+	height: 26px;
+}
+.icon1{
+    position: absolute; 
+    width: 180px;
+    height: 180px;
+    background: url(../main/images/deaf_symbol.jpg) no-repeat;
+    background-size: 180px 180px;
+    margin: auto; 
+    top: 0; left: 0; bottom: 0; right: 0;
+    z-index: 3;
+  
+    -webkit-box-shadow: 
+      0 0 0 10px   rgba(255,255,255,.2),
+      0 0 25px 2px rgba(0,0,0,.3),
+inset 0 0 0 15px   rgba(255,255,155,.4);
+    -moz-box-shadow: 
+      0 0 0 10px   rgba(255,255,255,.2),
+      0 0 25px 2px rgba(0,0,0,.3),
+inset 0 0 0 15px   rgba(255,255,155,.4);
+    box-shadow: 
+      0 0 0 10px   rgba(255,255,255,.2),
+      0 0 25px 2px rgba(0,0,0,.3),
+inset 0 0 0 15px   rgba(255,255,155,.4);
+  
+    -webkit-border-radius: 999px; 
+    -moz-border-radius: 999px;
+    border-radius: 999px;
+    /* border-radius: 50% has issues on some mobile browsers */
+}
+
+.pulse1 {
+    position: absolute;  
+    width: 200px;
+    height: 200px;
+    margin: auto; 
+    top: 0; left: 0; bottom: 0; right: 0;
+    z-index: 1;
+    opacity: 0;
+    border: 3px solid rgba(255,255,255,.1);
+  
+    -webkit-animation: pulsejg1 2s linear infinite;
+    -moz-animation: pulsejg1 2s linear infinite;
+    animation: pulsejg1 2s linear infinite;
+    -webkit-border-radius: 999px;
+    -moz-border-radius: 999px;
+    border-radius: 999px;
+    -webkit-box-shadow: inset 0px 0px 15px 10px rgba(0, 0, 0, .6);
+    -moz-box-shadow: inset 0px 0px 15px 10px rgba(0, 0, 0, .6);
+    box-shadow: inset 0px 0px 15px 10px rgba(0, 0, 0, .6);
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+@-webkit-keyframes pulsejg1 {
+    0% {
+        -webkit-transform: scale(.6);
+        opacity: 0;
+    }
+
+    50% {
+        -webkit-transform: scale(.6);
+        opacity: 0;
+    }
+
+    60% {
+        -webkit-transform: scale(.9);
+        opacity: .2;
+    }
+
+    70% {
+        -webkit-transform: scale(1.1);
+        opacity: .35;
+    }
+
+    80% {
+        -webkit-transform: scale(1.25);
+        opacity: .2;
+    }
+
+    100% {
+        -webkit-transform: scale(1.4);
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes pulsejg1 {
+    0% {
+        -moz-transform: scale(.6);
+        opacity: 0;
+    }
+
+    50% {
+        -moz-transform: scale(.6);
+        opacity: 0;
+    }
+
+    60% {
+        -moz-transform: scale(.9);
+        opacity: .2;
+    }
+
+    70% {
+        -moz-transform: scale(1.1);
+        opacity: .35;
+    }
+
+    80% {
+        -moz-transform: scale(1.25);
+        opacity: .2;
+    }
+
+    100% {
+        -moz-transform: scale(1.4);
+        opacity: 0;
+    }
+}
+
+@keyframes pulsejg1 {
+    0% {
+        transform: scale(.6);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(.6);
+        opacity: 0;
+    }
+
+    60% {
+        transform: scale(.9);
+        opacity: .1;
+    }
+
+    70% {
+        transform: scale(1.1);
+        opacity: .25;
+    }
+
+    80% {
+        transform: scale(1.25);
+        opacity: .1;
+    }
+
+    100% {
+        transform: scale(1.4);
+        opacity: 0;
+    }
+}
+
+.details{
+	cursor: pointer;
 }
