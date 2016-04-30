@@ -1,3 +1,10 @@
 .form-control{
 	margin-bottom: 10px;
 }
+.logout{
+	cursor: pointer;
+}
+.deaf-symbol{
+	width: 30px;
+	height: 30px;
+}

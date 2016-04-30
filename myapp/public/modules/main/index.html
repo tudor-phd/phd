@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="myApp">
 <head>
+<!-- <base href="/"> -->
     <meta charset="UTF-8">
     <title>PhD</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
@@ -8,14 +9,17 @@
     <script src="https://code.angularjs.org/1.4.9/angular-animate.js"></script>
     <script src="https://code.angularjs.org/1.4.9/angular-touch.js"></script>
     <script src="modules/assets/ui-bootstrap-tpls-1.3.1.min.js"></script>
+    <script type='text/javascript' src="http://www.botlibre.com/scripts/sdk.js"></script>
+    <link rel="icon" href="modules/main/images/favicon.ico">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="modules/main/main.css">
+    <link rel="stylesheet" type="text/css" href="modules/training/training.css">
 </head>
 <body>
 <!-- NAVIGATION -->
 <nav class="navbar navbar-inverse" role="navigation">
     <div class="navbar-header">
-        <a class="navbar-brand" ui-sref="home">PhD Project</a>
+        <a class="navbar-brand" ui-sref="home"><img class="deaf-symbol" src="modules/main/images/deaf_symbol.jpg" alt=""></a>
     </div>
     <ul class="nav navbar-nav">
         <li><a ui-sref="home">Home</a></li>
@@ -23,6 +27,8 @@
         <li><a ui-sref="signup">Sign up</a></li>
         <li><a ui-sref="dashboard">Dashboard</a></li>
         <li><a ui-sref="library">Library</a></li>
+        <li><a ui-sref="training">Training</a></li>
+        <li class="logout"><a ui-sref="logout">Log out</a></li>
     </ul>
 </nav>
 
@@ -35,6 +41,8 @@
 </div>
 <script src="modules/main/main.controller.js"></script>
 <script src="modules/dashboard/dashboard.controller.js"></script>
+<script src="modules/library/library.controller.js"></script>
+<script src="modules/training/training.controller.js"></script>
 <script src="modules/router.config.js"></script>
 <script src="modules/security.config.js"></script>
 </body>

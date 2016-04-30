@@ -1,0 +1,11 @@
+#avatar-avatarboxclose{
+	visibility: hidden;
+}
+.avatar-avatarbox{
+  top: 40%!important;
+  left: 40%!important;
+  position: absolute!important;
+}
+.avatar-avatarbox:hover{
+  border: 0px!important;
+}

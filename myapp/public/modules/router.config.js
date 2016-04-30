@@ -4,7 +4,7 @@
 
 var myApp = angular.module('myApp');
 
-myApp.config(function($stateProvider, $urlRouterProvider) {
+myApp.config(function($stateProvider, $locationProvider, $urlRouterProvider) {
 
     $urlRouterProvider.otherwise('/home');
 
@@ -32,6 +32,18 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
         .state('library', {
             url: '/library',
             templateUrl: 'modules/library/partials/libraryPartial.html'
+        })
+        .state('training', {
+            url: '/training',
+            templateUrl: 'modules/training/partials/trainingPartial.html'
+        })
+        .state('logout', {
+            url: '/logout',
+            templateUrl: 'modules/main/partials/loginPartial.html'
         });
+        // $locationProvider.html5Mode({
+        //   enabled: true,
+        //   requireBase: false
+        // });
 
 });
