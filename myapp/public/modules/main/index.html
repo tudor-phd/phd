@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="modules/main/main.css">
     <link rel="stylesheet" type="text/css" href="modules/training/training.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/animatecss/3.5.1/animate.css">
 </head>
 <body>
 <!-- NAVIGATION -->
@@ -33,13 +34,15 @@
 </nav>
 
 <!-- MAIN CONTENT -->
-<div class="container">
+<div class="container" ng-cloak>
 
     <!-- THIS IS WHERE WE INJECT OUR CONTENT ============================== -->
     <div ui-view></div>
-
+<div class="alert alert-{{alert.type}} animated main-alert" ng-class="{'flipInY': alert.show, 'flipOutY':!alert.show, 'alert-hidden':!alert.hasBeenShown}"><strong>{{alert.title}}</strong> {{alert.message}}</div>
 </div>
 <script src="modules/main/main.controller.js"></script>
+<script src="modules/main/services/alert.service.js"></script>
+<script src="modules/main/directives/sameAs.directive.js"></script>
 <script src="modules/main/modal.controller.js"></script>
 <script src="modules/dashboard/dashboard.controller.js"></script>
 <script src="modules/library/library.controller.js"></script>

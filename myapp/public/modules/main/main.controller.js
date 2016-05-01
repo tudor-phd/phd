@@ -4,7 +4,7 @@
 'use strict';
 var myApp = angular.module('myApp',['ngAnimate', 'ui.bootstrap', 'ui.router']);
 
-myApp.controller('mainController', function($scope, $uibModal, $log)
+myApp.controller('mainController', function($scope, $uibModal, $log, $http, alert)
 {
     $scope.items = ['item1', 'item2', 'item3'];
 
@@ -34,5 +34,18 @@ myApp.controller('mainController', function($scope, $uibModal, $log)
   $scope.toggleAnimation = function () {
     $scope.animationsEnabled = !$scope.animationsEnabled;
   };
+
+  $scope.submit = function(){
+
+  	var url = '/';
+  	var user = {};
+  	$http.post(url, user)
+  	.success(function(res){
+  		alert('success', 'Ok!', 'You are now registered');
+  	})
+  	.error(function(err){
+  		alert('warning', 'Opps!', 'Could not register');
+  	});
+  }
 
 });

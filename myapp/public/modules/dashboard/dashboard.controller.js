@@ -26,6 +26,8 @@ myApp.controller('dashboardController', function($scope)
 };
 if (window.File && window.FileReader && window.FileList && window.Blob) {
     document.getElementById('filePicker').addEventListener('change', handleFileSelect, false);
+    document.getElementById('filePicker2').addEventListener('change', handleFileSelect, false);
+    document.getElementById('filePicker3').addEventListener('change', handleFileSelect, false);
 } else {
     alert('The File APIs are not fully supported in this browser.');
 }
