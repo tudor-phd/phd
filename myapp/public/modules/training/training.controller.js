@@ -3,6 +3,7 @@ var myApp = angular.module('myApp');
 
 myApp.controller('trainingController', function($scope)
 {
+	$("#avatar-avatarbox").show();
 	SDK.applicationId = "6765300097490006919";
 	var sdk = new SDKConnection();
 	var web = new WebAvatar();

@@ -1,0 +1,96 @@
+<div ng-controller="lipsReadingController" class="jumbotron modal-border text-center">
+    <h1>Lips reading</h1>
+    <button type="button" class="btn btn-success btn-lg" ng-click="open()">
+        <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Info
+    </button>
+    <button type="button" class="btn btn-success btn-lg" ng-click="openWebCam()">
+        <span class="glyphicon glyphicon-facetime-video" aria-hidden="true"></span> Turn on your webcam and let's have some fun
+    </button>
+    <!-- Open modal with details -->
+    <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-border">
+            <div class="modal-header">
+                <h3 class="modal-title">Steps and details</h3>
+            </div>
+            <div class="modal-body">
+                <h4>Features</h4>
+                <ul>
+                    <li ng-repeat="item in items">
+                        <a href="#" ng-click="$event.preventDefault(); selected.item = item">{{ item }}</a>
+                    </li>
+                </ul>
+                <div ng-if="selected.item === 'Webcam'">
+                    Selected: <b>{{ selected.item }}</b>
+                    <br>
+                    <p>First step is to turn on your webcam</p>
+                    <br>
+                    <img class="webcam-img" src="modules/lipsreading/images/webcam.svg">
+                </div>
+                <div ng-if="selected.item === 'Speacking'">
+                    Selected: <b>{{ selected.item }}</b>
+                    <br>
+                    <p>After you turn on your webcam you can start speacking and observe your lips</p>
+                    <br>
+                    <img class="webcam-img" src="modules/lipsreading/images/speaking-icon.svg">
+                </div>
+                <div ng-if="selected.item === 'Translation'">
+                    Selected: <b>{{ selected.item }}</b>
+                    <br>
+                    <p>Under the webcam view you're gonna' see all translations of what you try to say to the system.</p>
+                    <br>
+                    <img class="webcam-img" src="modules/lipsreading/images/translation.jpeg">
+                </div>
+                <div ng-if="selected.item === 'Charts'">
+                    Selected: <b>{{ selected.item }}</b>
+                    <br>
+                    <p>You can enable the chart that can reflect your evolution in speacking</p>
+                    <br>
+                    <img class="webcam-img" src="modules/lipsreading/images/chart.jpg">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+                <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+            </div>
+        </div>
+    </script>
+    <!-- Open modal with details -->
+    <!-- Open modal with details -->
+    <script type="text/ng-template" id="myWebCam.html">
+        <div class="modal-border">
+            <div class="modal-header">
+                <h3 class="modal-title">Webcam - Lips-Reading</h3>
+            </div>
+            <div class="modal-body">
+                <div id="container">
+                    <video autoplay="true" id="videoElement">
+                    </video>
+                </div>
+                <br>
+                <textarea class="form-control" style="min-width: 100%"></textarea>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+                <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+            </div>
+            <script type="text/javascript">
+            var video = document.querySelector("#videoElement");
+            navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
+            if (navigator.getUserMedia) {
+                navigator.getUserMedia({
+                    video: true
+                }, handleVideo, videoError);
+            }
+
+            function handleVideo(stream) {
+                video.src = window.URL.createObjectURL(stream);
+            }
+
+            function videoError(e) {
+                document.write("can't use the webcam");
+            }
+            </script>
+        </div>
+    </script>
+    <!-- Open modal with details -->
+</div>

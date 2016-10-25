@@ -29,6 +29,10 @@ myApp.config(function($stateProvider, $locationProvider, $urlRouterProvider) {
             url: '/dashboard',
             templateUrl: 'modules/dashboard/partials/dashboardPartial.html'
         })
+        .state('profile', {
+            url: '/profile',
+            templateUrl: 'modules/profile/partials/profilePartial.html'
+        })
         .state('library', {
             url: '/library',
             templateUrl: 'modules/library/partials/libraryPartial.html'
@@ -36,6 +40,10 @@ myApp.config(function($stateProvider, $locationProvider, $urlRouterProvider) {
         .state('training', {
             url: '/training',
             templateUrl: 'modules/training/partials/trainingPartial.html'
+        })
+        .state('lipsreading', {
+            url: '/lipsreading',
+            templateUrl: 'modules/lipsreading/partials/lipsReading.html'
         })
         .state('logout', {
             url: '/logout',

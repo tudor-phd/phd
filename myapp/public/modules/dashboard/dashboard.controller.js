@@ -6,6 +6,7 @@ var myApp = angular.module('myApp');
 
 myApp.controller('dashboardController', function($scope)
 {
+  $("#avatar-avatarbox").hide();
   var handleFileSelect = function(evt) {
     var files = evt.target.files;
     var file = files[0];
