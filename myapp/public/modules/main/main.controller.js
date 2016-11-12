@@ -6,7 +6,8 @@ var myApp = angular.module('myApp',['ngAnimate', 'ui.bootstrap', 'ui.router']);
 
 myApp.controller('mainController', function($scope, $uibModal, $log, $http, alert)
 {
-    $scope.items = ['item1', 'item2', 'item3'];
+    $("#avatar-avatarbox").hide();
+    $scope.items = ['Dashboard', 'Library', 'Training', 'Lips reading'];
 
   $scope.animationsEnabled = true;
 

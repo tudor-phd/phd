@@ -1,8 +1,8 @@
-<div  ng-controller="trainingController" class="jumbotron text-center">
+<div  ng-controller="trainingController" class="jumbotron modal-border text-center">
 <!-- Split button -->
 <div class="btn-group pull-right" ng-class='{open: open}'>
-    <button class="btn btn-info" data-toggle="dropdown" ng-click='open=!open'>Language</button>
-    <button class="btn dropdown-toggle btn-info" data-toggle="dropdown" ng-click='open=!open'>
+    <button class="btn btn-info custom-button" data-toggle="dropdown" ng-click='open=!open'>Language</button>
+    <button class="btn dropdown-toggle btn-success custom-button" data-toggle="dropdown" ng-click='open=!open'>
         <span class="caret"></span>
     </button>
     <ul class="dropdown-menu">
@@ -17,7 +17,7 @@
     <div class="input-group">
       <input ng-model="trainingText" type="text" class="form-control" placeholder="Type some words and feel the sound vibration">
       <span class="input-group-btn">
-        <button ng-click="translateText()" class="btn btn-success" type="button">Feel the sound</button>
+        <button ng-click="translateText()" class="btn btn-success custom-button" type="button">Feel the sound</button>
       </span>
     </div><!-- /input-group -->
     <!-- Split button -->

@@ -4,6 +4,7 @@
 <!-- <base href="/"> -->
     <meta charset="UTF-8">
     <title>PhD</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
     <script src="https://code.angularjs.org/1.4.9/angular-animate.js"></script>
@@ -26,10 +27,12 @@
         <li><a ui-sref="home">Home</a></li>
         <li><a ui-sref="login">Login</a></li>
         <li><a ui-sref="signup">Sign up</a></li>
+        <li><a ui-sref="profile">Profile</a></li>
         <li><a ui-sref="dashboard">Dashboard</a></li>
         <li><a ui-sref="library">Library</a></li>
         <li><a ui-sref="training">Training</a></li>
-        <li class="logout"><a ui-sref="logout">Log out</a></li>
+        <li><a ui-sref="lipsreading">Lips reading</a></li>
+        <li data-toggle="tooltip" data-placement="bottom" title="Log out!" class="logout"><a class="logout-tab" ui-sref="logout"><span class="glyphicon glyphicon-off"></span></a></li>
     </ul>
 </nav>
 
@@ -40,13 +43,17 @@
     <div ui-view></div>
 <div class="alert alert-{{alert.type}} animated main-alert" ng-class="{'flipInY': alert.show, 'flipOutY':!alert.show, 'alert-hidden':!alert.hasBeenShown}"><strong>{{alert.title}}</strong> {{alert.message}}</div>
 </div>
+<script src="modules/constant.js"></script>
 <script src="modules/main/main.controller.js"></script>
+<script src="modules/main/login-signup.service.js"></script>
 <script src="modules/main/services/alert.service.js"></script>
 <script src="modules/main/directives/sameAs.directive.js"></script>
 <script src="modules/main/modal.controller.js"></script>
 <script src="modules/dashboard/dashboard.controller.js"></script>
 <script src="modules/library/library.controller.js"></script>
 <script src="modules/training/training.controller.js"></script>
+<script src="modules/lipsreading/lipsReading.controller.js"></script>
+<script src="modules/profile/profile.controller.js"></script>
 <script src="modules/router.config.js"></script>
 <script src="modules/security.config.js"></script>
 </body>

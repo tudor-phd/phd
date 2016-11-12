@@ -1,4 +1,4 @@
-<div  ng-controller="mainController" class="jumbotron text-center">
+<div  ng-controller="mainController" class="jumbotron modal-border text-center">
     <h2>Please sign up</h2>
     <div class="container">
         <div class="col-md-3"></div>
@@ -12,12 +12,7 @@
                 <label for="inputPasswordtwo" class="sr-only">Password</label>
                 <input name="password_confirm" ng-model="password_confirm" type="password" id="inputPasswordtwo" class="form-control" placeholder="Confirm password" required="" validate-equals='password'>
                 <p class="help-block" ng-show="register.password_confirm.$dirty && register.password_confirm.$invalid">Please match the passwords.</p>
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox" value="remember-me"> Remember me
-                    </label>
-                </div>
-                <button ng-disabled="register.$invalid" class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+                <button class="btn btn-lg btn-primary btn-block custom-button" type="submit"><strong>Sign up</strong></button>
             </form>
         </div>
         <div class="col-md-3"></div>

@@ -1,4 +1,4 @@
-<div  ng-controller="mainController" class="jumbotron text-center">
+<div  ng-controller="mainController" class="jumbotron modal-border text-center">
 <h2>Welcome!</h2>
  <div ng-click="open()" class="details">
   <div class="pulse1"></div>
@@ -7,7 +7,8 @@
 </div>
 <!-- Open modal with details -->
 <script type="text/ng-template" id="myModalContent.html">
-        <div class="modal-header">
+<div class="modal-border">
+     <div class="modal-header">
             <h3 class="modal-title">Application details</h3>
         </div>
         <div class="modal-body">
@@ -17,12 +18,33 @@
                     <a href="#" ng-click="$event.preventDefault(); selected.item = item">{{ item }}</a>
                 </li>
             </ul>
-            Selected: <b>{{ selected.item }}</b>
+            <div ng-if="selected.item === 'Dashboard'">
+                 Selected: <b>{{ selected.item }}</b>
+                 <br>
+                 <p>This is dashboard</p>
+            </div>
+            <div ng-if="selected.item === 'Training'">
+                 Selected: <b>{{ selected.item }}</b>
+                 <br>
+                 <p>On Training page you can train yourself. There are some avatars that can help you communicate better. There you can learn to read on lips.</p>
+            </div>
+            <div ng-if="selected.item === 'Library'">
+                 Selected: <b>{{ selected.item }}</b>
+                 <br>
+                 <p>On Library page you can upload your media files. There you can add your own collection of files.</p>
+            </div>
+            <div ng-if="selected.item === 'Lips reading'">
+                 Selected: <b>{{ selected.item }}</b>
+                 <br>
+                 <p>On Lips reading you can learn to read on lips. You need just a webcam to have access to all features of this module.</p>
+            </div>
         </div>
         <div class="modal-footer">
             <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
             <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
         </div>
+
+</div>
     </script>
     <!-- Open modal with details -->
 </div>
