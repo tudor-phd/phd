@@ -43,7 +43,7 @@ myApp.controller('lipsReadingController', function($scope, $uibModal, $log)
       $scope.selected = selectedItem;
     }, function () {
       $log.info('Modal dismissed at: ' + new Date());
-    });
+    });  
   }
 
 });
