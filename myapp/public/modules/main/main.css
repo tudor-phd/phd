@@ -16,6 +16,16 @@ body {
     height: 26px;
 }
 
+svg:first-of-type { display:none; }
+
+#videoel{
+    position: absolute;
+}
+
+#overlay{
+    position: absolute;
+}
+
 .icon1 {
     position: absolute;
     width: 180px;

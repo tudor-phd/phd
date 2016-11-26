@@ -3,9 +3,21 @@
     <button type="button" class="btn btn-success btn-lg" ng-click="open()">
         <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Info
     </button>
-    <button type="button" class="btn btn-success btn-lg" ng-click="openWebCam()">
+    <button type="button" class="btn btn-success btn-lg" onclick="startVideo()">
         <span class="glyphicon glyphicon-facetime-video" aria-hidden="true"></span> Turn on your webcam and let's have some fun
     </button>
+    <br>
+    <p id="letter"></p>
+        <div id="emotion_container">
+        <div id="emotion_icons">
+            <img class="emotion_icon" id="icon1" src="modules/media/icon_angry.png" style="visibility: hidden;">
+            <img class="emotion_icon" id="icon2" src="modules/media/icon_sad.png" style="visibility: hidden;">
+            <img class="emotion_icon" id="icon3" src="modules/media/icon_surprised.png" style="visibility: hidden;">
+            <img class="emotion_icon" id="icon4" src="modules/media/icon_happy.png" style="visibility: hidden;">
+        </div>
+        <div id="emotion_chart">
+        </div>
+    </div>
     <!-- Open modal with details -->
     <script type="text/ng-template" id="myModalContent.html">
         <div class="modal-border">
@@ -92,428 +104,519 @@
             </script>
         </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- <div id="content">
-                <video id="videoel" width="400" height="300" preload="auto" loop="" src="blob:https://www.auduno.com/e1510c3b-b143-487f-9c16-99f8ce213790">
-                </video>
-                <canvas id="overlay" width="400" height="300"></canvas>
-            <div style="cursor: pointer; width: 80px; opacity: 0.9; z-index: 10001; position: absolute; top: 0px;"><div style="text-align: left; line-height: 1.2em; background-color: rgb(8, 8, 24); padding: 0px 0px 3px 3px;"><div style="font-family: Helvetica, Arial, sans-serif; font-size: 9px; color: rgb(0, 255, 255); font-weight: bold;">6 FPS (0-30)</div><div style="position: relative; width: 74px; height: 30px; background-color: rgb(0, 255, 255);"><span style="width: 1px; height: 26.7px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 25.8px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 26.7px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 25.2px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 26.7px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 24.9px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 25.2px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 26.4px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 25.2px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 25.2px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 25.2px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 24.9px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 26.1px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 26.1px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 25.5px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 26.4px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 26.7px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 27px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 27px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 26.7px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 26.4px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 27px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 27px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 27px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 27px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 27px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 26.7px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 26.4px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 26.7px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 26.4px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 24.6px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 26.7px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 26.7px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 26.7px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 27px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 27px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 26.4px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 25.8px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 25.8px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 25.8px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 24.6px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 24.9px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 25.2px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 23.4px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 26.4px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 25.2px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 25.5px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 25.5px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 27px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 26.4px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 26.1px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 26.7px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 25.2px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 24.6px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 25.2px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 24.9px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 25.8px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 24.6px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 25.8px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 24.9px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 25.8px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 26.7px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 26.7px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 26.7px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 26.7px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 26.7px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 26.7px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 26.7px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 26.7px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 26.7px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 26.7px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 26.4px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 26.7px; float: left; background-color: rgb(16, 16, 48);"></span><span style="width: 1px; height: 28.2px; float: left; background-color: rgb(16, 16, 48);"></span></div></div><div style="text-align: left; line-height: 1.2em; background-color: rgb(8, 24, 8); padding: 0px 0px 3px 3px; display: none;"><div style="font-family: Helvetica, Arial, sans-serif; font-size: 9px; color: rgb(0, 255, 0); font-weight: bold;">622 MS (28-328039)</div><div style="position: relative; width: 74px; height: 30px; background-color: rgb(0, 255, 0);"><span style="width: 1px; height: 14.85px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 13.95px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 16.95px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 16.65px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 16.95px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 17.25px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 16.5px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 16.2px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 16.5px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 16.95px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 17.55px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 16.5px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 16.8px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 15.3px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 16.65px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 16.2px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 16.8px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 15.15px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 15px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 15.3px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 15.75px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 16.65px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 17.25px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 14.7px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 16.95px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 16.8px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 17.4px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 17.1px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 14.55px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 16.05px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 16.05px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 16.65px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 16.95px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 17.25px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 16.95px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 17.1px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 17.1px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 16.8px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 16.95px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 16.5px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 13.05px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 14.85px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 16.5px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 16.8px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 17.4px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 17.1px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 16.95px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 16.8px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 16.5px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 16.8px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 16.95px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 17.1px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 17.25px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 17.4px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 16.2px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 16.65px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 16.8px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 16.95px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 17.55px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 14.25px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 17.4px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 15.75px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 15px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 16.95px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 16.5px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 16.8px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 16.05px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 15.9px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 16.95px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 17.1px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 17.25px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 16.95px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 16.95px; float: left; background-color: rgb(16, 48, 16);"></span><span style="width: 1px; height: 17.25px; float: left; background-color: rgb(16, 48, 16);"></span></div></div></div></div>
-            <canvas id="sketch" width="400" height="300"></canvas>
-            <div id="emotion_container">
-                <div id="emotion_icons">
-                    <img class="emotion_icon" id="icon1" src="modules/media/icon_angry.png" style="visibility: hidden;">
-                    <img class="emotion_icon" id="icon2" src="modules/media/icon_sad.png" style="visibility: hidden;">
-                    <img class="emotion_icon" id="icon3" src="modules/media/icon_surprised.png" style="visibility: hidden;">
-                    <img class="emotion_icon" id="icon4" src="modules/media/icon_happy.png" style="visibility: hidden;">
-                </div>
-                <div id="emotion_chart">
-                <svg width="400" height="100">
-                <rect x="40" y="55.83618007410742" height="14.163819925892582" width="30" fill="#2d578b"></rect>
-                <rect x="125" y="67.70409617362843" height="2.295903826371572" width="30" fill="#2d578b"></rect>
-                <rect x="210" y="66.53834339836692" height="3.461656601633085" width="30" fill="#2d578b"></rect>
-                <rect x="295" y="65.2558733778321" height="4.744126622167898" width="30" fill="#2d578b"></rect>
-                <text x="70" y="55.83618007410742" dx="-15" dy="1.2em" text-anchor="middle" fill="white" class="labels">0.2</text>
-                <text x="155" y="67.70409617362843" dx="-15" dy="1.2em" text-anchor="middle" fill="white" class="labels">0.0</text>
-                <text x="240" y="66.53834339836692" dx="-15" dy="1.2em" text-anchor="middle" fill="white" class="labels">0.0</text>
-                <text x="325" y="65.2558733778321" dx="-15" dy="1.2em" text-anchor="middle" fill="white" class="labels">0.1</text>
-                <text x="70" y="70" dx="-15" text-anchor="middle" style="font-size: 12" transform="translate(0, 18)" class="yAxis">angry</text>
-                <text x="155" y="70" dx="-15" text-anchor="middle" style="font-size: 12" transform="translate(0, 18)" class="yAxis">sad</text>
-                <text x="240" y="70" dx="-15" text-anchor="middle" style="font-size: 12" transform="translate(0, 18)" class="yAxis">surprised</text>
-                <text x="325" y="70" dx="-15" text-anchor="middle" style="font-size: 12" transform="translate(0, 18)" class="yAxis">happy</text>
-                </svg>
-                </div>
-            </div>
-            <div id="controls">
-                <input class="btn" type="button" value="start" onclick="startVideo()" id="startbutton">
-            </div>
-            <script>
-                var vid = document.getElementById('videoel');
-                var overlay = document.getElementById('overlay');
-                var overlayCC = overlay.getContext('2d');
-                
-                /********** check and set up video/webcam **********/
-
-                function enablestart() {
-                    var startbutton = document.getElementById('startbutton');
-                    startbutton.value = "start";
-                    startbutton.disabled = null;
-                }
-                
-                /*var insertAltVideo = function(video) {
-                    if (supports_video()) {
-                        if (supports_ogg_theora_video()) {
-                            video.src = "../media/cap12_edit.ogv";
-                        } else if (supports_h264_baseline_video()) {
-                            video.src = "../media/cap12_edit.mp4";
-                        } else {
-                            return false;
-                        }
-                        //video.play();
-                        return true;
-                    } else return false;
-                }*/
-                navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
-                window.URL = window.URL || window.webkitURL || window.msURL || window.mozURL;
-
-                // check for camerasupport
-                if (navigator.getUserMedia) {
-                    // set up stream
-                    
-                    var videoSelector = {video : true};
-                    if (window.navigator.appVersion.match(/Chrome\/(.*?) /)) {
-                        var chromeVersion = parseInt(window.navigator.appVersion.match(/Chrome\/(\d+)\./)[1], 10);
-                        if (chromeVersion < 20) {
-                            videoSelector = "video";
-                        }
-                    };
-                
-                    navigator.getUserMedia(videoSelector, function( stream ) {
-                        if (vid.mozCaptureStream) {
-                            vid.mozSrcObject = stream;
-                        } else {
-                            vid.src = (window.URL && window.URL.createObjectURL(stream)) || stream;
-                        }
-                        vid.play();
-                    }, function() {
-                        //insertAltVideo(vid);
-                        alert("There was some problem trying to fetch video from your webcam. If you have a webcam, please make sure to accept when the browser asks for access to your webcam.");
-                    });
-                } else {
-                    //insertAltVideo(vid);
-                    alert("This demo depends on getUserMedia, which your browser does not seem to support. :(");
-                }
-
-                vid.addEventListener('canplay', enablestart, false);
-                
-                /*********** setup of emotion detection *************/
-
-                var ctrack = new clm.tracker({useWebGL : true});
-                ctrack.init(pModel);
-
-                function startVideo() {
-                    // start video
-                    vid.play();
-                    // start tracking
-                    ctrack.start(vid);
-                    // start loop to draw face
-                    drawLoop();
-                }
-                
-                function drawLoop() {
-                    requestAnimFrame(drawLoop);
-                    overlayCC.clearRect(0, 0, 400, 300);
-                    //psrElement.innerHTML = "score :" + ctrack.getScore().toFixed(4);
-                    if (ctrack.getCurrentPosition()) {
-                        ctrack.draw(overlay);
-                    }
-                    var cp = ctrack.getCurrentParameters();
-                    
-                    var er = ec.meanPredict(cp);
-                    if (er) {
-                        updateData(er);
-                        for (var i = 0;i < er.length;i++) {
-                            if (er[i].value > 0.4) {
-                                document.getElementById('icon'+(i+1)).style.visibility = 'visible';
-                            } else {
-                                document.getElementById('icon'+(i+1)).style.visibility = 'hidden';
-                            }
-                        }
-                    }
-                }
-                
-                var ec = new emotionClassifier();
-                ec.init(emotionModel);
-                var emotionData = ec.getBlank();    
-                
-                /************ d3 code for barchart *****************/
-
-                var margin = {top : 20, right : 20, bottom : 10, left : 40},
-                    width = 400 - margin.left - margin.right,
-                    height = 100 - margin.top - margin.bottom;
-
-                var barWidth = 30;
-
-                var formatPercent = d3.format(".0%");
-                
-                var x = d3.scale.linear()
-                    .domain([0, ec.getEmotions().length]).range([margin.left, width+margin.left]);
-
-                var y = d3.scale.linear()
-                    .domain([0,1]).range([0, height]);
-
-                var svg = d3.select("#emotion_chart").append("svg")
-                    .attr("width", width + margin.left + margin.right)
-                    .attr("height", height + margin.top + margin.bottom)
-                
-                svg.selectAll("rect").
-                  data(emotionData).
-                  enter().
-                  append("svg:rect").
-                  attr("x", function(datum, index) { return x(index); }).
-                  attr("y", function(datum) { return height - y(datum.value); }).
-                  attr("height", function(datum) { return y(datum.value); }).
-                  attr("width", barWidth).
-                  attr("fill", "#2d578b");
-
-                svg.selectAll("text.labels").
-                  data(emotionData).
-                  enter().
-                  append("svg:text").
-                  attr("x", function(datum, index) { return x(index) + barWidth; }).
-                  attr("y", function(datum) { return height - y(datum.value); }).
-                  attr("dx", -barWidth/2).
-                  attr("dy", "1.2em").
-                  attr("text-anchor", "middle").
-                  text(function(datum) { return datum.value;}).
-                  attr("fill", "white").
-                  attr("class", "labels");
-                
-                svg.selectAll("text.yAxis").
-                  data(emotionData).
-                  enter().append("svg:text").
-                  attr("x", function(datum, index) { return x(index) + barWidth; }).
-                  attr("y", height).
-                  attr("dx", -barWidth/2).
-                  attr("text-anchor", "middle").
-                  attr("style", "font-size: 12").
-                  text(function(datum) { return datum.emotion;}).
-                  attr("transform", "translate(0, 18)").
-                  attr("class", "yAxis");
-
-                function updateData(data) {
-                    // update
-                    var rects = svg.selectAll("rect")
-                        .data(data)
-                        .attr("y", function(datum) { return height - y(datum.value); })
-                        .attr("height", function(datum) { return y(datum.value); });
-                    var texts = svg.selectAll("text.labels")
-                        .data(data)
-                        .attr("y", function(datum) { return height - y(datum.value); })
-                        .text(function(datum) { return datum.value.toFixed(1);});
-
-                    // enter 
-                    rects.enter().append("svg:rect");
-                    texts.enter().append("svg:text");
-
-                    // exit
-                    rects.exit().remove();
-                    texts.exit().remove();
-                }
-
-                /******** stats ********/
-
-                stats = new Stats();
-                stats.domElement.style.position = 'absolute';
-                stats.domElement.style.top = '0px';
-                document.getElementById('container').appendChild( stats.domElement );
-
-                // update stats on every iteration
-                document.addEventListener('clmtrackrIteration', function(event) {
-                    stats.update();
-                }, false);
-                
-            </script>
-        </div>
-    </script>
-    <!-- Open modal with details -->
-    <script type="text/javascript" charset="utf-8">
- var vid = document.getElementById('videoel');
-        var overlay = document.getElementById('overlay');
-        var overlayCC = overlay.getContext('2d');
+<div id="content">
+<script>
+                var videoInput = document.getElementById('videoel');
         
-        /********** check and set up video/webcam **********/
+        var ctracker = new clm.tracker();
+        ctracker.init(pModel);
+        ctracker.start(videoInput);
+                
+                function positionLoop() {
+          requestAnimationFrame(positionLoop);
+          var positions = ctracker.getCurrentPosition();
+          //console.log(positions)
+          // do something with the positions ...
+          // print the positions
+          var positionString = "";
+          //console.log(positions[5][0])
+          var Coord1 = positions[5][0].toString().slice(0,3);
+          var Coord2 = positions[5][1].toString().slice(0,3);
+          var valueText = $( "text" ).text();
+          var numberPattern = /\d+/g;
+          var coord = valueText.match( numberPattern );
+          //console.log(coord[2]);
+          console.log(coord);
+          //2345
+          //console.log(Coord1, Coord2)
+          if(coord[5] === '9' || coord[5] === '8'){
+            document.getElementById('letter').innerHTML = 'Your pronunciation: I';
+            console.log('I')
+          }
+          if(coord[2] === '40'){
+            document.getElementById('letter').innerHTML = 'Your pronunciation: A';
+            console.log('A')
+          }
+           if(coord[2] === '10' && coord[5] !== '9' && coord[5] !== '8'){
+            document.getElementById('letter').innerHTML = 'Your pronunciation: E';
+            console.log('E')
+          }
+          // if(coord[3] === '00'){
+          //   document.getElementById('letter').innerHTML = 'O';
+          //   console.log('O')
+          // }
+          if(coord[5] === '1'){
+            document.getElementById('letter').innerHTML = 'Your pronunciation: U';
+            console.log('U')
+          }
 
-        function enablestart() {
-          var startbutton = document.getElementById('startbutton');
-          startbutton.value = "start";
-          startbutton.disabled = null;
+          if (positions) {
+            for (var p = 0;p < 10;p++) {
+              positionString += "featurepoint "+p+" : ["+positions[p][0].toFixed(2)+","+positions[p][1].toFixed(2)+"]<br/>";
+            }
+            document.getElementById('positions').innerHTML = positionString;
+          }
         }
-        
-        /*var insertAltVideo = function(video) {
-          if (supports_video()) {
+        positionLoop();
+                
+                var canvasInput = document.getElementById('canvas');
+                var cc = canvasInput.getContext('2d');
+                function drawLoop() {
+          requestAnimationFrame(drawLoop);
+          cc.clearRect(0, 0, canvasInput.width, canvasInput.height);
+          ctracker.draw(canvasInput);
+        }
+        drawLoop();
+            </script>
+<!--   <video id="videoel" width="400" height="300" preload="auto" loop="" src="blob:https://www.auduno.com/e1510c3b-b143-487f-9c16-99f8ce213790"> -->
+    <video id="videoel" width="400" height="300">
+    </video>
+    <canvas id="overlay" width="400" height="300"></canvas>
+    <br>
+    <p id="positions"></p>
+    <div id="controls">
+        <!-- <input class="btn" type="button" value="start" onclick="startVideo()" id="startbutton"> -->
+        <input class="btn" type="button" value="start" id="startbutton">
+    </div>
+    <script>
+    var vid = document.getElementById('videoel');
+    var overlay = document.getElementById('overlay');
+    var overlayCC = overlay.getContext('2d');
+
+    /********** check and set up video/webcam **********/
+
+    function enablestart() {
+        var startbutton = document.getElementById('startbutton');
+        startbutton.value = "start";
+        startbutton.disabled = null;
+    }
+
+    /*var insertAltVideo = function(video) {
+        if (supports_video()) {
             if (supports_ogg_theora_video()) {
-              video.src = "../media/cap12_edit.ogv";
+                video.src = "../media/cap12_edit.ogv";
             } else if (supports_h264_baseline_video()) {
-              video.src = "../media/cap12_edit.mp4";
+                video.src = "../media/cap12_edit.mp4";
             } else {
-              return false;
+                return false;
             }
             //video.play();
             return true;
-          } else return false;
-        }*/
-        navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
-        window.URL = window.URL || window.webkitURL || window.msURL || window.mozURL;
+        } else return false;
+    }*/
+    navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
+    window.URL = window.URL || window.webkitURL || window.msURL || window.mozURL;
 
-        // check for camerasupport
-        if (navigator.getUserMedia) {
-          // set up stream
-          
-          var videoSelector = {video : true};
-          if (window.navigator.appVersion.match(/Chrome\/(.*?) /)) {
+    // check for camerasupport
+    if (navigator.getUserMedia) {
+        // set up stream
+
+        var videoSelector = {
+            video: true
+        };
+        if (window.navigator.appVersion.match(/Chrome\/(.*?) /)) {
             var chromeVersion = parseInt(window.navigator.appVersion.match(/Chrome\/(\d+)\./)[1], 10);
             if (chromeVersion < 20) {
-              videoSelector = "video";
+                videoSelector = "video";
             }
-          };
-        
-          navigator.getUserMedia(videoSelector, function( stream ) {
+        };
+
+        navigator.getUserMedia(videoSelector, function(stream) {
             if (vid.mozCaptureStream) {
-              vid.mozSrcObject = stream;
+                vid.mozSrcObject = stream;
             } else {
-              vid.src = (window.URL && window.URL.createObjectURL(stream)) || stream;
+                vid.src = (window.URL && window.URL.createObjectURL(stream)) || stream;
             }
             vid.play();
-          }, function() {
+        }, function() {
             //insertAltVideo(vid);
             alert("There was some problem trying to fetch video from your webcam. If you have a webcam, please make sure to accept when the browser asks for access to your webcam.");
-          });
-        } else {
-          //insertAltVideo(vid);
-          alert("This demo depends on getUserMedia, which your browser does not seem to support. :(");
-        }
+        });
+    } else {
+        //insertAltVideo(vid);
+        alert("This demo depends on getUserMedia, which your browser does not seem to support. :(");
+    }
 
-        vid.addEventListener('canplay', enablestart, false);
-        
-        /*********** setup of emotion detection *************/
+    vid.addEventListener('canplay', enablestart, false);
 
-        var ctrack = new clm.tracker({useWebGL : true});
-        ctrack.init(pModel);
+    /*********** setup of emotion detection *************/
 
-        function startVideo() {
-          // start video
-          vid.play();
-          // start tracking
-          ctrack.start(vid);
-          // start loop to draw face
-          drawLoop();
-        }
-        
-        function drawLoop() {
-          requestAnimFrame(drawLoop);
-          overlayCC.clearRect(0, 0, 400, 300);
-          //psrElement.innerHTML = "score :" + ctrack.getScore().toFixed(4);
-          if (ctrack.getCurrentPosition()) {
+    var ctrack = new clm.tracker({
+        useWebGL: true
+    });
+    ctrack.init(pModel);
+
+    function startVideo() {
+        // start video
+        vid.play();
+        // start tracking
+        ctrack.start(vid);
+        // start loop to draw face
+        drawLoop();
+    }
+
+    function drawLoop() {
+        requestAnimFrame(drawLoop);
+        overlayCC.clearRect(0, 0, 400, 300);
+        //psrElement.innerHTML = "score :" + ctrack.getScore().toFixed(4);
+        if (ctrack.getCurrentPosition()) {
             ctrack.draw(overlay);
-          }
-          var cp = ctrack.getCurrentParameters();
-          
-          var er = ec.meanPredict(cp);
-          if (er) {
+        }
+        var cp = ctrack.getCurrentParameters();
+
+        var er = ec.meanPredict(cp);
+        if (er) {
             updateData(er);
-            for (var i = 0;i < er.length;i++) {
-              if (er[i].value > 0.4) {
-                document.getElementById('icon'+(i+1)).style.visibility = 'visible';
-              } else {
-                document.getElementById('icon'+(i+1)).style.visibility = 'hidden';
-              }
+            for (var i = 0; i < er.length; i++) {
+                //console.log(er[i])
+                if (er[i].value > 0.4) {
+                    document.getElementById('icon' + (i + 1)).style.visibility = 'visible';
+                } else {
+                    document.getElementById('icon' + (i + 1)).style.visibility = 'hidden';
+                }
             }
-          }
         }
-        
-        var ec = new emotionClassifier();
-        ec.init(emotionModel);
-        var emotionData = ec.getBlank();  
-        
-        /************ d3 code for barchart *****************/
+    }
 
-        var margin = {top : 20, right : 20, bottom : 10, left : 40},
-          width = 400 - margin.left - margin.right,
-          height = 100 - margin.top - margin.bottom;
+    var ec = new emotionClassifier();
+    ec.init(emotionModel);
+    var emotionData = ec.getBlank();
 
-        var barWidth = 30;
+    /************ d3 code for barchart *****************/
 
-        var formatPercent = d3.format(".0%");
-        
-        var x = d3.scale.linear()
-          .domain([0, ec.getEmotions().length]).range([margin.left, width+margin.left]);
+    var margin = {
+            top: 20,
+            right: 20,
+            bottom: 10,
+            left: 40
+        },
+        width = 400 - margin.left - margin.right,
+        height = 100 - margin.top - margin.bottom;
 
-        var y = d3.scale.linear()
-          .domain([0,1]).range([0, height]);
+    var barWidth = 30;
 
-        var svg = d3.select("#emotion_chart").append("svg")
-          .attr("width", width + margin.left + margin.right)
-          .attr("height", height + margin.top + margin.bottom)
-        
-        svg.selectAll("rect").
-          data(emotionData).
-          enter().
-          append("svg:rect").
-          attr("x", function(datum, index) { return x(index); }).
-          attr("y", function(datum) { return height - y(datum.value); }).
-          attr("height", function(datum) { return y(datum.value); }).
-          attr("width", barWidth).
-          attr("fill", "#2d578b");
+    var formatPercent = d3.format(".0%");
 
-        svg.selectAll("text.labels").
-          data(emotionData).
-          enter().
-          append("svg:text").
-          attr("x", function(datum, index) { return x(index) + barWidth; }).
-          attr("y", function(datum) { return height - y(datum.value); }).
-          attr("dx", -barWidth/2).
-          attr("dy", "1.2em").
-          attr("text-anchor", "middle").
-          text(function(datum) { return datum.value;}).
-          attr("fill", "white").
-          attr("class", "labels");
-        
-        svg.selectAll("text.yAxis").
-          data(emotionData).
-          enter().append("svg:text").
-          attr("x", function(datum, index) { return x(index) + barWidth; }).
-          attr("y", height).
-          attr("dx", -barWidth/2).
-          attr("text-anchor", "middle").
-          attr("style", "font-size: 12").
-          text(function(datum) { return datum.emotion;}).
-          attr("transform", "translate(0, 18)").
-          attr("class", "yAxis");
+    var x = d3.scale.linear()
+        .domain([0, ec.getEmotions().length]).range([margin.left, width + margin.left]);
 
-        function updateData(data) {
-          // update
-          var rects = svg.selectAll("rect")
+    var y = d3.scale.linear()
+        .domain([0, 1]).range([0, height]);
+
+    var svg = d3.select("#emotion_chart").append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+
+    svg.selectAll("rect").
+    data(emotionData).
+    enter().
+    append("svg:rect").
+    attr("x", function(datum, index) {
+        return x(index);
+    }).
+    attr("y", function(datum) {
+        return height - y(datum.value);
+    }).
+    attr("height", function(datum) {
+        return y(datum.value);
+    }).
+    attr("width", barWidth).
+    attr("fill", "#2d578b");
+
+    svg.selectAll("text.labels").
+    data(emotionData).
+    enter().
+    append("svg:text").
+    attr("x", function(datum, index) {
+        return x(index) + barWidth;
+    }).
+    attr("y", function(datum) {
+        return height - y(datum.value);
+    }).
+    attr("dx", -barWidth / 2).
+    attr("dy", "1.2em").
+    attr("text-anchor", "middle").
+    text(function(datum) {
+        return datum.value;
+    }).
+    attr("fill", "black").
+    attr("class", "labels");
+
+    svg.selectAll("text.yAxis").
+    data(emotionData).
+    enter().append("svg:text").
+    attr("x", function(datum, index) {
+        return x(index) + barWidth;
+    }).
+    attr("y", height).
+    attr("dx", -barWidth / 2).
+    attr("text-anchor", "middle").
+    attr("style", "font-size: 12").
+    text(function(datum) {
+        return datum.emotion;
+    }).
+    attr("transform", "translate(0, 18)").
+    attr("class", "yAxis");
+
+    function updateData(data) {
+        // update
+        var rects = svg.selectAll("rect")
             .data(data)
-            .attr("y", function(datum) { return height - y(datum.value); })
-            .attr("height", function(datum) { return y(datum.value); });
-          var texts = svg.selectAll("text.labels")
+            .attr("y", function(datum) {
+                return height - y(datum.value);
+            })
+            .attr("height", function(datum) {
+                return y(datum.value);
+            });
+        var texts = svg.selectAll("text.labels")
             .data(data)
-            .attr("y", function(datum) { return height - y(datum.value); })
-            .text(function(datum) { return datum.value.toFixed(1);});
+            .attr("y", function(datum) {
+                return height - y(datum.value);
+            })
+            .text(function(datum) {
+                return datum.value.toFixed(1);
+            });
 
-          // enter 
-          rects.enter().append("svg:rect");
-          texts.enter().append("svg:text");
+        // enter 
+        rects.enter().append("svg:rect");
+        texts.enter().append("svg:text");
 
-          // exit
-          rects.exit().remove();
-          texts.exit().remove();
-        }
+        // exit
+        rects.exit().remove();
+        texts.exit().remove();
+    }
 
-        /******** stats ********/
+    /******** stats ********/
 
-        stats = new Stats();
-        stats.domElement.style.position = 'absolute';
-        stats.domElement.style.top = '0px';
-        document.getElementById('container').appendChild( stats.domElement );
-
-        // update stats on every iteration
-        document.addEventListener('clmtrackrIteration', function(event) {
-          stats.update();
-        }, false);
+    stats = new Stats();
+    stats.domElement.style.position = 'absolute';
+    stats.domElement.style.top = '0px';
+    document.getElementById('container').appendChild(stats.domElement);
+    // update stats on every iteration
+    document.addEventListener('clmtrackrIteration', function(event) {
+        stats.update();
+    }, false);
     </script>
+</div>
+</script>
+<!-- Open modal with details -->
+<script type="text/javascript" charset="utf-8">
+var vid = document.getElementById('videoel');
+var overlay = document.getElementById('overlay');
+var overlayCC = overlay.getContext('2d');
+
+/********** check and set up video/webcam **********/
+
+function enablestart() {
+    var startbutton = document.getElementById('startbutton');
+    startbutton.value = "start";
+    startbutton.disabled = null;
+}
+
+/*var insertAltVideo = function(video) {
+  if (supports_video()) {
+    if (supports_ogg_theora_video()) {
+      video.src = "../media/cap12_edit.ogv";
+    } else if (supports_h264_baseline_video()) {
+      video.src = "../media/cap12_edit.mp4";
+    } else {
+      return false;
+    }
+    //video.play();
+    return true;
+  } else return false;
+}*/
+navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
+window.URL = window.URL || window.webkitURL || window.msURL || window.mozURL;
+
+// check for camerasupport
+if (navigator.getUserMedia) {
+    // set up stream
+
+    var videoSelector = {
+        video: true
+    };
+    if (window.navigator.appVersion.match(/Chrome\/(.*?) /)) {
+        var chromeVersion = parseInt(window.navigator.appVersion.match(/Chrome\/(\d+)\./)[1], 10);
+        if (chromeVersion < 20) {
+            videoSelector = "video";
+        }
+    };
+
+    navigator.getUserMedia(videoSelector, function(stream) {
+        if (vid.mozCaptureStream) {
+            vid.mozSrcObject = stream;
+        } else {
+            vid.src = (window.URL && window.URL.createObjectURL(stream)) || stream;
+        }
+        vid.play();
+    }, function() {
+        //insertAltVideo(vid);
+        alert("There was some problem trying to fetch video from your webcam. If you have a webcam, please make sure to accept when the browser asks for access to your webcam.");
+    });
+} else {
+    //insertAltVideo(vid);
+    alert("This demo depends on getUserMedia, which your browser does not seem to support. :(");
+}
+
+vid.addEventListener('canplay', enablestart, false);
+
+/*********** setup of emotion detection *************/
+
+var ctrack = new clm.tracker({
+    useWebGL: true
+});
+ctrack.init(pModel);
+
+function startVideo() {
+    // start video
+    vid.play();
+    // start tracking
+    ctrack.start(vid);
+    // start loop to draw face
+    drawLoop();
+}
+
+function drawLoop() {
+    requestAnimFrame(drawLoop);
+    overlayCC.clearRect(0, 0, 400, 300);
+    //psrElement.innerHTML = "score :" + ctrack.getScore().toFixed(4);
+    if (ctrack.getCurrentPosition()) {
+        ctrack.draw(overlay);
+    }
+    var cp = ctrack.getCurrentParameters();
+
+    var er = ec.meanPredict(cp);
+    //console.log(er)
+    if (er) {
+        updateData(er);
+        for (var i = 0; i < er.length; i++) {
+            if (er[i].value > 0.4) {
+                document.getElementById('icon' + (i + 1)).style.visibility = 'visible';
+            } else {
+                document.getElementById('icon' + (i + 1)).style.visibility = 'hidden';
+            }
+        }
+    }
+}
+
+var ec = new emotionClassifier();
+ec.init(emotionModel);
+var emotionData = ec.getBlank();
+
+/************ d3 code for barchart *****************/
+
+var margin = {
+        top: 20,
+        right: 20,
+        bottom: 10,
+        left: 40
+    },
+    width = 400 - margin.left - margin.right,
+    height = 100 - margin.top - margin.bottom;
+
+var barWidth = 30;
+
+var formatPercent = d3.format(".0%");
+
+var x = d3.scale.linear()
+    .domain([0, ec.getEmotions().length]).range([margin.left, width + margin.left]);
+
+var y = d3.scale.linear()
+    .domain([0, 1]).range([0, height]);
+
+var svg = d3.select("#emotion_chart").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+
+svg.selectAll("rect").
+data(emotionData).
+enter().
+append("svg:rect").
+attr("x", function(datum, index) {
+    return x(index);
+}).
+attr("y", function(datum) {
+    return height - y(datum.value);
+}).
+attr("height", function(datum) {
+    return y(datum.value);
+}).
+attr("width", barWidth).
+attr("fill", "#2d578b");
+
+svg.selectAll("text.labels").
+data(emotionData).
+enter().
+append("svg:text").
+attr("x", function(datum, index) {
+    return x(index) + barWidth;
+}).
+attr("y", function(datum) {
+    return height - y(datum.value);
+}).
+attr("dx", -barWidth / 2).
+attr("dy", "1.2em").
+attr("text-anchor", "middle").
+text(function(datum) {
+    return datum.value;
+}).
+attr("fill", "black").
+attr("class", "labels");
+
+svg.selectAll("text.yAxis").
+data(emotionData).
+enter().append("svg:text").
+attr("x", function(datum, index) {
+    return x(index) + barWidth;
+}).
+attr("y", height).
+attr("dx", -barWidth / 2).
+attr("text-anchor", "middle").
+attr("style", "font-size: 12").
+text(function(datum) {
+    return datum.emotion;
+}).
+attr("transform", "translate(0, 18)").
+attr("class", "yAxis");
+
+function updateData(data) {
+    // update
+    var rects = svg.selectAll("rect")
+        .data(data)
+        .attr("y", function(datum) {
+            return height - y(datum.value);
+        })
+        .attr("height", function(datum) {
+            return y(datum.value);
+        });
+    var texts = svg.selectAll("text.labels")
+        .data(data)
+        .attr("y", function(datum) {
+            return height - y(datum.value);
+        })
+        .text(function(datum) {
+            return datum.value.toFixed(1);
+        });
+
+    // enter 
+    rects.enter().append("svg:rect");
+    texts.enter().append("svg:text");
+
+    // exit
+    rects.exit().remove();
+    texts.exit().remove();
+}
+
+/******** stats ********/
+
+stats = new Stats();
+stats.domElement.style.position = 'absolute';
+stats.domElement.style.top = '0px';
+document.getElementById('container').appendChild(stats.domElement);
+
+// update stats on every iteration
+document.addEventListener('clmtrackrIteration', function(event) {
+    stats.update();
+}, false);
+</script>
